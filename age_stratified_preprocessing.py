@@ -44,14 +44,14 @@ def parse_answers_file(file_path):
         return answers
         
     with open(answer_file_path, "r") as f:
-        # Split by double newline to separate records (e.g., a01 from a02)
+        # Split by double newline to separate records
         blocks = f.read().strip().split("\n\n")
         
     for block in blocks:
         lines = block.strip().split("\n")
         if not lines: continue
         
-        # First line is the record name (e.g., "a01" or "x01")
+        # First line is the record name
         record_name = lines[0].strip()
         
         # Remaining lines contain the labels. 
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     print(f"Training ({AGE_TRAIN_MIN}-{AGE_TRAIN_MAX}): {len(train_subs)} subjects")
     print(f"Testing ({AGE_TEST_MIN}-{AGE_TEST_MAX}):    {len(test_subs)} subjects")
 
-    # 2. Balance Groups
+    # 2. Balance Groups - Uncomment this if you want balance number of subject in two age groups
     # print("Balancing groups...")
     # train_subs, test_subs = balance_groups(train_subs, test_subs)
     # print(f"Balanced counts -> Train: {len(train_subs)}, Test: {len(test_subs)}")

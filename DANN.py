@@ -121,7 +121,7 @@ def create_adversarial_model(input_shape, alpha=1.0):
     """
     inputs = Input(shape=input_shape)
 
-    # --- SHARED FEATURE EXTRACTOR ---
+    # SHARED FEATURE EXTRACTOR
     # CNN Block
     x = Conv1D(64, kernel_size=7, padding="same", activation="relu")(inputs)
     x = MaxPooling1D(pool_size=4)(x)
@@ -142,11 +142,11 @@ def create_adversarial_model(input_shape, alpha=1.0):
     # Compresses features to force the model to drop "noise" (like age info)
     bottleneck = Dense(64, activation='relu', name="shared_bottleneck")(lstm_out)
     
-    # --- BRANCH 1: APNEA CLASSIFIER (Main Task) ---
+    #BRANCH 1: APNEA CLASSIFIER (Main Task)
     apnea_dense = Dense(64, activation='relu')(bottleneck)
     apnea_output = Dense(2, activation="softmax", name="apnea_output")(apnea_dense)
 
-    # --- BRANCH 2: AGE ADVERSARY (Bias Mitigation) ---
+    #BRANCH 2: AGE ADVERSARY (Bias Mitigation)
     # Step 3: Strong Adversary ("Min-Max Strategy")
     # GRL flips the gradient to penalize shared layers for age info
     grl_output = GradientReversalLayer(alpha=alpha)(bottleneck)
@@ -227,8 +227,7 @@ if __name__ == "__main__":
     age_train = keras.utils.to_categorical(age_train, num_classes=2)
     age_test = keras.utils.to_categorical(age_test, num_classes=2)
 
-    # 3. Build Model (Stronger Alpha)
-    # alpha=1.0 is a good starting point for a strong adversary
+    # 3. Build Model
     model = create_adversarial_model(input_shape=x_train.shape[1:], alpha=1.0)
     model.summary()
 
@@ -249,7 +248,7 @@ if __name__ == "__main__":
         }
     )
 
-    # 5. Callbacks (Mode='min' fix included)
+    # 5. Callbacks
     os.makedirs('model_adv', exist_ok=True)
     callbacks_list = [
         ModelCheckpoint(
@@ -275,7 +274,6 @@ if __name__ == "__main__":
     )
 
     # 7. Evaluate
-    # Load best model to ensure we evaluate the optimal state
     print("Loading best model for evaluation...")
     model.load_weights('model_adv/best_model.keras')
     evaluate_and_plot(model, history.history, x_test, y_test, age_test)

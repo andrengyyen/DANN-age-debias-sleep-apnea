@@ -122,7 +122,7 @@ def load_stratified_data():
 
 # --- 4. Main Training Loop ---
 if __name__ == "__main__":
-    # Load
+    # uncomment this for swap age group for train/test or modify age min/max manually in training and test set
     # x_train, y_train, x_test, y_test, g_train, g_test, age_map = load_stratified_data()
     x_test, y_test, x_train, y_train, g_test, g_train, age_map = load_stratified_data()
     print(f"Train Shape: {x_train.shape}, Test Shape: {x_test.shape}")
