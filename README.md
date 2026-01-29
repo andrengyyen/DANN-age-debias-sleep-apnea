@@ -39,7 +39,7 @@ This implementation utilizes a hybrid **CNN-Transformer-LSTM** backbone integrat
     * Script to run cross-age validation experiments (e.g., training on Young and testing on Old) to check the sensitivity and specificity of the model on different age groups".
 
 * `/apnea-ecg-database-1.0.0`
-    * An empty directory intended for the **PhysioNet Apnea-ECG Database**.
+    * An empty directory intended for the [**PhysioNet Apnea-ECG Database**](https://physionet.org/content/apnea-ecg/1.0.0/).
     * **Note:** Users must download the data from PhysioNet to this folder before running scripts.
 
 * `/dataset`
@@ -52,3 +52,4 @@ This implementation utilizes a hybrid **CNN-Transformer-LSTM** backbone integrat
 1.  **Baseline Model:** Pham, D.T., & Mouček, R. (2025). Efficient sleep apnea detection using single-lead ECG with CNN-Transformer-LSTM. *Computers in Biology and Medicine*.
 2.  **DANN Theory:** Ganin, Y., et al. (2016). Domain-adversarial training of neural networks. *Journal of Machine Learning Research*.
 3.  **Bottleneck Framework:** Chen, X., et al. (2023). BAFNet: Bottleneck attention based fusion network for sleep apnea detection. *IEEE JBHI*.
+4.  **PhysioNet Apnea-ECG dataset:** Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220. RRID:SCR_007345.
