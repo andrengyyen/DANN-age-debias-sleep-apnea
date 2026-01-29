@@ -8,8 +8,8 @@ This repository contains the implementation of a **Domain-Adversarial Neural Net
 | :--- | :--- |
 | **Unit** | SIT723 Research Techniques & Applications / SIT792 Minor Thesis |
 | **Institution** | Deakin University |
-| **Student** | Trung Hoang Anh (Andre) Nguyen |
-| **Supervisor** | Dr. Md. Ahsan Habib |
+| **Student** | [Trung Hoang Anh (Andre) Nguyen](https://www.linkedin.com/in/andre-nguyen-0298a9287/) |
+| **Supervisor** | [Dr. Md. Ahsan Habib](https://experts.deakin.edu.au/50940-ahsan-habib) |
 
 ---
 
