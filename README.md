@@ -35,12 +35,15 @@ This implementation utilizes a hybrid **CNN-Transformer-LSTM** backbone integrat
 * `DANN.py`
     * Contains the dual-head architecture featuring a primary **apnea task classifier** and a secondary **adversarial age discriminator**.
 
-* `model_bias_testing.py`
-    * Script to run cross-age validation experiments (e.g., training on Young and testing on Old) to quantify the baseline model's demographic "shortcuts".
+* `age_bias_testing.py`
+    * Script to run cross-age validation experiments (e.g., training on Young and testing on Old) to check the sensitivity and specificity of the model on different age groups".
 
-* `/dataset`
+* `/apnea-ecg-database-1.0.0`
     * An empty directory intended for the **PhysioNet Apnea-ECG Database**.
     * **Note:** Users must download the data from PhysioNet to this folder before running scripts.
+
+* `/dataset`
+    * An empty directory intended for the output from preprocessing
 
 ---
 
