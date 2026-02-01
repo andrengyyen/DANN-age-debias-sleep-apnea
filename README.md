@@ -15,9 +15,8 @@ This repository contains the implementation of a **Domain-Adversarial Neural Net
 
 ## Core Methodology
 
-The research focuses on resolving **Simpson's Paradox** in automated sleep medicine—a phenomenon where high aggregate accuracy masks significant diagnostic failures in specific age subgroups.
-
-This implementation utilizes a hybrid **CNN-Transformer-LSTM** backbone integrated with a **Gradient Reversal Layer (GRL)** and a shared bottleneck layer. This architecture forces the model to learn age-invariant features, ensuring that the diagnostic performance remains consistent across different demographic cohorts.
+The research focuses on resolving age-specific bias in sleep apnea detection.
+This implementation utilizes a hybrid **CNN-Transformer-LSTM** backbone (Pham et al. 2025) integrated with a **Gradient Reversal Layer (GRL)** and a shared bottleneck layer. This architecture forces the model to learn age-invariant features, ensuring that the diagnostic performance remains consistent across different demographic cohorts.
 
 ---
 
